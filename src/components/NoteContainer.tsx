@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import Note from '../models/Note';
 import { createNote, readNotes, updateNote, deleteNote } from '../services/noteService';
-import NoteCard from './NoteCard';
+import NoteInput from './NoteInput';
+import NoteList from './NoteList';
 
-const NoteComponent: React.FC = () => {
+const NoteContainer: React.FC = () => {
   const [notes, setNotes] = useState<Note[]>([]);
   const [newNote, setNewNote] = useState<Omit<Note, 'id'>>({ title: '', content: '', createdAt: '', updatedAt: '' });
 
@@ -48,33 +49,10 @@ const NoteComponent: React.FC = () => {
 
   return (
     <div className="container mx-auto mt-4">
-      <div className="mb-4">
-        <input 
-          className="border p-2 rounded" 
-          placeholder="Title" 
-          value={newNote.title} 
-          onChange={(e) => setNewNote({ ...newNote, title: e.target.value })}
-        />
-        <input 
-          className="border p-2 rounded ml-2" 
-          placeholder="Content" 
-          value={newNote.content} 
-          onChange={(e) => setNewNote({ ...newNote, content: e.target.value })}
-        />
-        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ml-2" onClick={addNote}>
-          Add Note
-        </button>
-      </div>
-      {notes.map((note) => (
-        <NoteCard 
-          key={note.id} 
-          note={note} 
-          onEdit={editNote} 
-          onDelete={removeNote} 
-        />
-      ))}
+      <NoteInput newNote={newNote} setNewNote={setNewNote} addNote={addNote} />
+      <NoteList notes={notes} onEdit={editNote} onDelete={removeNote} />
     </div>
   );
 };
 
-export default NoteComponent;
+export default NoteContainer;

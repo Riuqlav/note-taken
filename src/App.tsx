@@ -1,9 +1,9 @@
-import NoteComponent from "./components/NoteComponent";
+import NoteContainer from "./components/NoteContainer";
 
 export default function App() {
   return (
   <div>
-    <NoteComponent/>
+    <NoteContainer/>
   </div>
   )
 }

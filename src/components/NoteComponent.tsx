@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import Note from '../models/Note';  // Replace with the actual path
-import { createNote, readNotes, updateNote, deleteNote } from '../services/noteService';  // Replace with the actual path
+import Note from '../models/Note';
+import { createNote, readNotes, updateNote, deleteNote } from '../services/noteService';
+import NoteCard from './NoteCard';
 
 const NoteComponent: React.FC = () => {
   const [notes, setNotes] = useState<Note[]>([]);
@@ -32,7 +33,8 @@ const NoteComponent: React.FC = () => {
     const updatedContent = prompt('New content:', note.content);
 
     if (updatedTitle && updatedContent) {
-      await updateNote(note.id, { ...note, title: updatedTitle, content: updatedContent });
+      const updatedNoteData = { ...note, title: updatedTitle, content: updatedContent };
+      await updateNote(note.id, updatedNoteData);
       const allNotes = await readNotes();
       setNotes(allNotes);
     }
@@ -63,16 +65,14 @@ const NoteComponent: React.FC = () => {
           Add Note
         </button>
       </div>
-      <ul>
-        {notes.map((note) => (
-          <li key={note.id} className="mb-2">
-            <span className="text-xl">{note.title}</span>
-            <span className="ml-4">{note.content}</span>
-            <button className="text-blue-500 hover:text-blue-700 ml-4" onClick={() => editNote(note)}>Edit</button>
-            <button className="text-red-500 hover:text-red-700 ml-2" onClick={() => removeNote(note.id)}>Delete</button>
-          </li>
-        ))}
-      </ul>
+      {notes.map((note) => (
+        <NoteCard 
+          key={note.id} 
+          note={note} 
+          onEdit={editNote} 
+          onDelete={removeNote} 
+        />
+      ))}
     </div>
   );
 };

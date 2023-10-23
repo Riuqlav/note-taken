@@ -1,5 +1,6 @@
 import React from 'react';
 import Note from '../models/Note';
+import { MdEdit, MdDelete } from 'react-icons/md';
 
 interface NoteCardProps {
   note: Note;
@@ -7,20 +8,33 @@ interface NoteCardProps {
   onDelete: (id: string) => void;
 }
 
+const formatDate = (dateString: string): string => {
+  const date = new Date(dateString);
+  const formattedDate = date.toISOString().slice(0, 16).replace('T', ' at ');
+  return formattedDate;
+};
+
 const NoteCard: React.FC<NoteCardProps> = ({ note, onEdit, onDelete }) => {
   return (
-    <div className="border p-4 rounded mb-2">
-      <h2 className="text-xl">{note.title}</h2>
-      <p className="text-sm mb-2">{note.content}</p>
-      <div>
-        <button className="text-blue-500 hover:text-blue-700" onClick={() => onEdit(note)}>Edit</button>
-        <button className="text-red-500 hover:text-red-700 ml-2" onClick={() => onDelete(note.id)}>Delete</button>
+    <div className="border p-4 rounded bg-white">
+      <div className="flex justify-end">
+        <button className="text-blue-500" onClick={() => onEdit(note)}>
+          <MdEdit color="blue" />
+        </button>
       </div>
-      <div className="text-gray-600 text-xs mt-2">
-        Created: {note.createdAt} | Updated: {note.updatedAt}
+      <h2 className="text-xl font-semibold">{note.title}</h2>
+      <p className="text-gray-600">{note.content}</p>
+      <div className="text-sm text-gray-400">
+        <span>Created: {formatDate(note.createdAt)}</span>
+      </div>
+      <div className="flex justify-end">
+        <button className="text-red-500" onClick={() => onDelete(note.id)}>
+          <MdDelete color="red" />
+        </button>
       </div>
     </div>
   );
-}
+};
 
 export default NoteCard;
+

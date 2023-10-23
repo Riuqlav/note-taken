@@ -48,11 +48,10 @@ const NoteContainer: React.FC = () => {
   };
 
   return (
-    <div className="container mx-auto mt-4">
+    <div className="container mx-auto p-4">
       <NoteInput newNote={newNote} setNewNote={setNewNote} addNote={addNote} />
       <NoteList notes={notes} onEdit={editNote} onDelete={removeNote} />
     </div>
   );
 };
-
-export default NoteContainer;
+  export default NoteContainer;

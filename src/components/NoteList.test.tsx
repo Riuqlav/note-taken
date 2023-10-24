@@ -16,10 +16,8 @@ describe('NoteList', () => {
 
     // Check if titles are rendered
     const renderedTitles = getAllByText(/Note \d/);
-    expect(renderedTitles).toHaveLength(2);
-    expect(renderedTitles[0]).toHaveTextContent('Note 1');
-    expect(renderedTitles[1]).toHaveTextContent('Note 2');
-
-    // If you have more details you want to assert, add them here
+    expect(renderedTitles.length).toBe(2);
+    expect(renderedTitles[0].textContent).toBe('Note 1');
+    expect(renderedTitles[1].textContent).toBe('Note 2');
   });
 });

@@ -137,13 +137,15 @@ We chose Firestore Firebase as the database for the following compelling reasons
 
 ---
 
-## 📜 License
+## 🎥 Demo
 
-Distributed under the MIT License. See `LICENSE` for more information.
+🔗 Project Link: [https://riuqlav.github.io/note-taken/](https://riuqlav.github.io/note-taken/)
 
 ---
 
 ## 📬 Contact
 
-Vincent Souza
-🔗 Project Link: [https://riuqlav.github.io/note-taken/](https://riuqlav.github.io/note-taken/)
+Vincent Souza  
+🔗 LinkedIn: [https://www.linkedin.com/in/vincentsouza/](https://www.linkedin.com/in/vincentsouza/)
+
+---

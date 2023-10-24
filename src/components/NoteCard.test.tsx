@@ -1,4 +1,3 @@
-import React from 'react';
 import { render } from '@testing-library/react';
 import NoteCard from './NoteCard';
 import Note from '../models/Note';

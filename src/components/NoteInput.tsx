@@ -9,7 +9,7 @@ interface NoteInputProps {
 
 const NoteInput: React.FC<NoteInputProps> = ({ newNote, setNewNote, addNote }) => {
   return (
-    <div className="p-4">
+    <div className="pb-4">
       <input
         className="border p-2 rounded mr-2"
         placeholder="Title"

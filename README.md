@@ -1,22 +1,5 @@
 # ✨ Note-taking System ✨
 
-## 📑 Table of Contents
-
-- [🌟 Overview](#overview)
-- [🛠 Tech Stack](#tech-stack)
-- [🚀 Getting Started](#getting-started)
-  - [📦 Prerequisites](#prerequisites)
-  - [🔧 Installation](#installation)
-- [🗄 Database Schema](#database-schema)
-- [📝 API Documentation](#api-documentation)
-- [🧪 Testing](#testing)
-- [💡 Design Decisions](#design-decisions)
-- [⚖ Trade-offs](#trade-offs)
-- [📜 License](#license)
-- [📬 Contact](#contact)
-
----
-
 ## 🌟 Overview
 
 A **robust and efficient** note-taking system to help you _capture_ and **organize** your thoughts, ideas, and reminders.

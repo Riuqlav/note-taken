@@ -28,7 +28,7 @@ const NoteCard: React.FC<NoteCardProps> = ({ note, onEdit, onDelete }) => {
       <h2 className="text-xl font-semibold">{note.title}</h2>
       <p className="text-gray-600">{note.content}</p>
       <div className="text-sm text-gray-400">
-        <span>Created: {formatDate(note.createdAt)}</span>
+        <span> {formatDate(note.createdAt)}</span>
       </div>
       <div className="flex justify-end">
         <button className="text-red-500" onClick={() => onDelete(note.id)}>

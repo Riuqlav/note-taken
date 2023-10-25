@@ -10,9 +10,12 @@ interface NoteCardProps {
 
 const formatDate = (dateString: string): string => {
   const date = new Date(dateString);
-  const formattedDate = date.toISOString().slice(0, 16).replace('T', ' at ');
-  return formattedDate;
+  const userTimezoneOffset = date.getTimezoneOffset() * 60000;
+  const localISOTime = new Date(date.getTime() - userTimezoneOffset).toISOString();
+  const [year, month, day, time] = localISOTime.match(/(\d{4})-(\d{2})-(\d{2})T(\d{2}:\d{2})/)?.slice(1) || [];
+  return `Created: ${day}-${month}-${year} at ${time}`;
 };
+
 
 const NoteCard: React.FC<NoteCardProps> = ({ note, onEdit, onDelete }) => {
   return (

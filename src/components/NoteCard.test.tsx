@@ -18,4 +18,5 @@ test('displays NoteCard', () => {
   );
 
   expect(getByText('Test')).toBeDefined();
+  expect(getByText('Created: 01-01-2022 at 12:00')).toBeDefined();
 });

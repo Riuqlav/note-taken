@@ -11,7 +11,7 @@ export const createNote = async (note: Omit<Note, 'id'>) => {
   };
 
   const docRef = await addDoc(collection(db, 'notes'), newNote);
-  return docRef.id; // This will be the ID of the newly created note
+  return docRef.id; // This will be the ID of the newly created note to fix the first not Id missing 
 };
 
 

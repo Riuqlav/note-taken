@@ -2,9 +2,7 @@
 
 ## 🌟 Overview
 
-A **robust and efficient** note-taking system to help you _capture_ and **organize** your thoughts, ideas, and reminders.
-
----
+A robust and efficient note-taking system designed to capture and organize your thoughts, ideas, and reminders.
 
 ## 🛠 Tech Stack
 
@@ -12,8 +10,6 @@ A **robust and efficient** note-taking system to help you _capture_ and **organi
 - **🎨 Styling**: Tailwind CSS
 - **🔥 Back-end**: Firebase Firestore
 - **🧪 Testing**: Jest
-
----
 
 ## 🚀 Getting Started
 
@@ -23,35 +19,34 @@ A **robust and efficient** note-taking system to help you _capture_ and **organi
 - npm
 - Firebase Account
 
----
+### 🔧 Installation
 
-## 🔧 Installation
+1. Clone the repository:
 
-1️⃣ Clone the repo  
- `bash
-    git clone https://github.com/Riuqlav/note-taken.git
-    `
+   ```bash
+   git clone https://github.com/Riuqlav/note-taken.git
+   ```
 
-2️⃣ Navigate to the project directory  
- `bash
-    cd note-taken
-    `
+2. Navigate to the project directory:
 
-3️⃣ Install NPM packages  
- `bash
-    npm install
-    `
+   ```bash
+   cd note-taken
+   ```
 
-4️⃣ Start the development server  
- `bash
-    npm run dev
-    `
+3. Install NPM packages:
 
----
+   ```bash
+   npm install
+   ```
+
+4. Start the development server:
+   ```bash
+   npm run dev
+   ```
 
 ## 🗄 Database Schema
 
-_Notes collection_:
+**Notes collection**:
 
 - `🆔 id`: unique identifier
 - `📝 title`: string
@@ -59,64 +54,38 @@ _Notes collection_:
 - `⏰ timestamp`: date
 - `🔄 lastUpdated`: date
 
----
-
-## 📝 API Documentation
-
-- **✨ Create Note**: `POST /api/notes`
-- **📝 Update Note**: `PUT /api/notes/:id`
-- **🗑 Delete Note**: `DELETE /api/notes/:id`
-- **📋 List Notes**: `GET /api/notes`
-
----
-
-## 🧪 Testing
-
-Run the following command to execute the unit tests.
-
-```bash
-npm test
-```
-
----
-
 ## 💡 Design Decisions
 
 ### 🔥 Firestore Firebase for Backend
 
-We chose Firestore Firebase as the database for the following compelling reasons:
+Firestore Firebase was chosen as the database for its:
 
-#### Pros:
+1. **Real-Time Updates**: Immediate data reflection.
+2. **Scalability**: Effortless scaling for a potentially large user base.
+3. **Simplified Data Synchronization**: Syncing across multiple devices.
+4. **Security**: Measures provided directly at the database level.
+5. **Ease of Use**: Simplified development with Firestore's client libraries.
+6. **Reduced Server Load**: No middle-man server means improved application speed.
 
-1. **Real-Time Updates**: Firestore allows real-time data updates, invaluable for a note-taking app where immediate reflection of data is often needed.
+### Direct Frontend-Database Interaction:
 
-2. **Scalability**: Firestore's design allows it to scale effortlessly, fitting well with potential for a large user base.
-
-3. **Simplified Data Synchronization**: Firestore easily syncs data across multiple devices.
-
-4. **Security**: Robust security measures are provided directly at the database level.
-
-5. **Ease of Use**: Firestore's client libraries simplify the development process.
-
-6. **Reduced Server Load**: Without the need for a middle-man server for database calls, application speed improves.
-
-#### Direct Frontend-Database Interaction:
-
-1. **Lower Latency**: Reduced latency as server round-trips are eliminated.
-
-2. **Reduced Complexity**: Eliminates need to maintain separate API endpoints for CRUD operations.
-
-3. **Cost-Efficiency**: Costs are further reduced as extensive backend setup is unnecessary.
-
-4. **Rapid Development**: Fewer layers result in quicker development and iterations.
+1. **Lower Latency**: No server round-trips.
+2. **Reduced Complexity**: No need for separate API endpoints.
+3. **Cost-Efficiency**: Less extensive backend setup.
+4. **Rapid Development**: Faster development with fewer layers.
 
 ### ⚖ Trade-offs
 
-1. **Limited Business Logic**: The architecture might limit complex server-side business logic.
+1. **Limited Business Logic**: Might limit complex server-side logic.
+2. **Security Rules Complexity**: Security is directly on Firestore.
+3. **Vendor Lock-in**: Dependency on Google's ecosystem.
 
-2. **Security Rules Complexity**: As security is directly applied on Firestore, the rules can become complex.
+## 🧪 Testing
 
-3. **Vendor Lock-in**: Being dependent on Firestore ties you to Google's ecosystem.
+To execute unit tests, run:
+
+```bash
+npm test
 
 ---
 
@@ -128,7 +97,8 @@ We chose Firestore Firebase as the database for the following compelling reasons
 
 ## 📬 Contact
 
-Vincent Souza  
+Vincent Souza
 🔗 LinkedIn: [https://www.linkedin.com/in/vincentsouza/](https://www.linkedin.com/in/vincentsouza/)
 
 ---
+```
